@@ -1,0 +1,73 @@
+<!--<div  style="width:500px;height:600px;background: red;"></div>-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header"> 
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> 
+				<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+			</button>
+			<a class="navbar-brand" href="#" style="color:#337ab7">Somenote</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<a href="#">所有日记</a>
+				</li>
+				<li>
+					<a href="#">标签</a>
+				</li>
+				<li>
+					<a href="#">查找</a>
+				</li>
+				<li>
+					<a href="#">修改密码</a>
+				</li>
+				<li ng-click="tc()">
+					<a href="#" >退出</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+
+<div  class="container ng-scope"  style="margin-top:70px">
+   <div class="panel panel-default" ng-repeat="a in data2"  ui-sref="d({id:a.id,title:a.title,content:a.content})" style="cursor:pointer">
+    <div class="panel-heading"> 
+    <h3 class="panel-title">
+        {{a.title}}
+        <span class="label label-success">标签1</span> 
+		<span class="label label-success">标签2</span> 
+		<span class="label label-success">标签3</span>
+     </h3> 
+     </div> 
+     <div class="panel-body" > 
+       <div style="border-bottom:1px solid #eee;color:#777;margin-bottom:5px">2016-10-11</div> 
+          {{a.content}}
+       </div> 
+     </div>
+   </div>
+   </div>
+
+
+
+
+
+
+
+<div class="affix" style="bottom:5px;width:100%"> 
+   <div style="width:33.3%;height:50px;float:left;">
+   <button ng-click="last()" class="btn btn-primary" >上一页<button>
+   </div>
+   <div style="width:33.3%;height:50px;float:left;" >
+     <span style="background:#337ab7;width:50px;height:50px;color:#fff;margin:0 auto;font-size:33px;line-height:50px;text-align:center;border-radius:25px;box-shadow:0px 0px 5px #337ab7;cursor:pointer;display:block;" ui-sref="e">+</span>
+   </div>
+   <div style="width:33.3%;height:50px;float:right;">
+   <button ng-click="next()" class="btn btn-primary" style="float:right;">下一页<button>
+   </div>
+ </div> 
+	
+
